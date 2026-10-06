@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Casino Vetl</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">🎰 Casino Vetl</div>
+        <div class="user-info" id="user-info">Загрузка...</div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <!-- Экран: Главная -->
+        <section class="screen active" id="screen-home">
+            <div class="card card-balance">
+                <div class="balance-label">💰 Баланс</div>
+                <div class="balance-value" id="balance">0 $</div>
+            </div>
+            <div class="row">
+                <div class="card card-small">
+                    <div class="small-label">🏆 Ранг</div>
+                    <div class="small-value" id="rank">—</div>
+                </div>
+                <div class="card card-small">
+                    <div class="small-label">🔥 Streak</div>
+                    <div class="small-value" id="streak">0 дн.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="small-label">📊 Оборот</div>
+                <div class="small-value" id="turnover">0 $</div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-gold" onclick="openCasino()">🎮 Играть в боте</button>
+                <button class="btn btn-outline" onclick="openBank()">🏦 Открыть банк</button>
+            </div>
+        </section>
+
+        <!-- Экран: Топы -->
+        <section class="screen" id="screen-tops">
+            <div class="tabs">
+                <button class="tab active" onclick="loadTop('balance')">💰 Баланс</button>
+                <button class="tab" onclick="loadTop('turnover')">📈 Оборот</button>
+                <button class="tab" onclick="loadTop('refs')">👥 Рефералы</button>
+            </div>
+            <div class="card" id="top-list">
+                <div class="loading">Загрузка топа...</div>
+            </div>
+        </section>
+
+        <!-- Экран: История -->
+        <section class="screen" id="screen-history">
+            <div class="card">
+                <h3>📜 Последние 10 ставок</h3>
+                <div id="history-list">
+                    <div class="loading">Загрузка...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран: Квесты -->
+        <section class="screen" id="screen-quests">
+            <div class="card">
+                <h3>🎯 Ежедневные квесты</h3>
+                <div id="quests-daily">
+                    <div class="loading">Загрузка...</div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>📆 Недельные квесты</h3>
+                <div id="quests-weekly">
+                    <div class="loading">Загрузка...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран: Игры -->
+        <section class="screen" id="screen-games">
+            <div class="card games-grid">
+                <button class="game-btn" onclick="openCasino()">💎<br>Мины</button>
+                <button class="game-btn" onclick="openCasino()">🃏<br>Блек Джек</button>
+                <button class="game-btn" onclick="openCasino()">🚀<br>Краш</button>
+                <button class="game-btn" onclick="openCasino()">🎡<br>Рулетка</button>
+                <button class="game-btn" onclick="openCasino()">🎡<br>Колесо</button>
+                <button class="game-btn" onclick="openCasino()">🎁<br>Кейсы</button>
+            </div>
+            <div class="card">
+                <div class="note">⚠️ Игры открываются в боте @CasinoVetlBot</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-screen="home" onclick="switchScreen('home')">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Главная</span>
+        </button>
+        <button class="nav-btn" data-screen="tops" onclick="switchScreen('tops')">
+            <span class="nav-icon">🏆</span>
+            <span class="nav-label">Топы</span>
+        </button>
+        <button class="nav-btn" data-screen="history" onclick="switchScreen('history')">
+            <span class="nav-icon">📜</span>
+            <span class="nav-label">История</span>
+        </button>
+        <button class="nav-btn" data-screen="quests" onclick="switchScreen('quests')">
+            <span class="nav-icon">🎯</span>
+            <span class="nav-label">Квесты</span>
+        </button>
+        <button class="nav-btn" data-screen="games" onclick="switchScreen('games')">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Игры</span>
+        </button>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+  </html>
