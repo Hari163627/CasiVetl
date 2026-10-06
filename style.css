@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f0c05;
+    color: #ffffff;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    overflow-x: hidden;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    background: linear-gradient(180deg, #1a1508 0%, #0f0c05 100%);
+    border-bottom: 2px solid #d4af37;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.user-info {
+    font-size: 13px;
+    color: #d4af37;
+}
+
+/* ==================== CONTENT ==================== */
+.content {
+    padding: 16px;
+    padding-bottom: 100px;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== CARDS ==================== */
+.card {
+    background: linear-gradient(135deg, #1a1508 0%, #252010 100%);
+    border: 1px solid #3a2f1a;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-balance {
+    background: linear-gradient(135deg, #2a1f0a 0%, #3a2f1a 100%);
+    border: 2px solid #d4af37;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.balance-label {
+    font-size: 14px;
+    color: #d4af37;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.balance-value {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    word-break: break-all;
+}
+
+.card-small {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.small-label {
+    font-size: 12px;
+    color: #a8956a;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.small-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* ==================== BUTTONS ==================== */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+    color: #0f0c05;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-gold:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+}
+
+.btn-outline:active {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* ==================== TABS ==================== */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 8px;
+    background: #1a1508;
+    border: 1px solid #3a2f1a;
+    border-radius: 10px;
+    color: #a8956a;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+    color: #0f0c05;
+    border-color: #d4af37;
+}
+
+/* ==================== TOP LIST ==================== */
+.top-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #2a1f0a;
+    font-size: 14px;
+}
+
+.top-item:last-child {
+    border-bottom: none;
+}
+
+.top-rank {
+    width: 40px;
+    font-weight: bold;
+    color: #d4af37;
+    font-size: 16px;
+}
+
+.top-rank.gold { color: #ffd700; font-size: 20px; }
+.top-rank.silver { color: #c0c0c0; font-size: 20px; }
+.top-rank.bronze { color: #cd7f32; font-size: 20px; }
+
+.top-name {
+    flex: 1;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.top-value {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 14px;
+}
+
+.my-place {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid #d4af37;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffd700;
+}
+
+/* ==================== HISTORY ==================== */
+.history-item {
+    padding: 12px;
+    border-bottom: 1px solid #2a1f0a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-game {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.history-result {
+    color: #a8956a;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.history-amount {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.history-win { color: #4ade80; }
+.history-loss { color: #ef4444; }
+
+/* ==================== QUESTS ==================== */
+.quest-item {
+    padding: 14px;
+    border-bottom: 1px solid #2a1f0a;
+}
+
+.quest-item:last-child {
+    border-bottom: none;
+}
+
+.quest-title {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.quest-progress {
+    height: 8px;
+    background: #2a1f0a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.quest-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #d4af37 0%, #ffd700 100%);
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+.quest-status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #a8956a;
+}
+
+.quest-done { color: #4ade80; font-weight: bold; }
+.quest-claim { color: #ffd700; font-weight: bold; }
+
+/* ==================== GAMES ==================== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.game-btn {
+    background: linear-gradient(135deg, #1a1508 0%, #252010 100%);
+    border: 1px solid #3a2f1a;
+    border-radius: 12px;
+    padding: 18px 8px;
+    color: #ffd700;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    line-height: 1.4;
+}
+
+.game-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #252010 0%, #3a2f1a 100%);
+    border-color: #d4af37;
+}
+
+.note {
+    font-size: 12px;
+    color: #a8956a;
+    text-align: center;
+}
+
+/* ==================== LOADING ==================== */
+.loading {
+    text-align: center;
+    color: #a8956a;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.empty {
+    text-align: center;
+    color: #a8956a;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ==================== BOTTOM NAV ==================== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, #1a1508 0%, #0f0c05 100%);
+    border-top: 2px solid #d4af37;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.nav-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #a8956a;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.nav-btn.active {
+    color: #ffd700;
+}
+
+.nav-btn.active .nav-icon {
+    transform: scale(1.15);
+}
+
+.nav-icon {
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1508;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 2px;
+  }
